@@ -1,7 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
 import Swal from 'sweetalert2';
-import { Code, Database, Server, Layers, Globe, Zap, Award, BookOpen } from 'lucide-react';
+import { Code, Database, Server, Layers, Zap, Award, BookOpen } from 'lucide-react';
 import type { SkillCategory } from '../types';
 type Certification = {
   title: string;

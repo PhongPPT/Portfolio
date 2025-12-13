@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Facebook } from 'lucide-react';
+import { Github, Mail, Facebook } from 'lucide-react';
 import type { HeroProps } from '../types';
 import Swal from 'sweetalert2';
 

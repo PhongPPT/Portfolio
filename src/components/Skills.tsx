@@ -149,7 +149,7 @@ const Skills: React.FC = () => {
                       title: cert.title,
                       imageUrl: cert.image,
                       imageAlt: cert.title,
-                      width: "65%",
+                      width: "100%",
                       background: "#0f172a",
                       color: "#fff",
                       showCloseButton: true,

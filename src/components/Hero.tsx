@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               Swal.fire({
                 title: "My Resume",
                 imageUrl: MyresumeImg,
-                width: "70%",
+                width: "100%",
                 background: "#98999cff",
                 color: "#fff",
                 showCloseButton: true,
@@ -73,9 +73,9 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             className="hover:text-purple-400 transition-colors"
             onClick={() =>
               Swal.fire({
-                title: "Facebook",
+                // title: "Facebook",
                 imageUrl: FacebookImg,
-                width: "65%",
+                width: "100%",
                 background: "#d6dbe8ff",
                 color: "#fff",
                 showCloseButton: true,
@@ -83,7 +83,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                 backdrop: true,
               })
             }
-            aria-label="Facebook"
+            // aria-label="Facebook"
           >
             <Facebook size={24} />
           </a>

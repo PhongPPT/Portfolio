@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { X, Github, Mail, Facebook } from 'lucide-react';
+import {Github, Mail, Facebook } from 'lucide-react';
 import type { HeroProps } from '../types';
 import Swal from 'sweetalert2';
 import FacebookImg from '../assets/Facebook.png';

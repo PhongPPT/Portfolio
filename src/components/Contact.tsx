@@ -1,6 +1,11 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../config/emailConfig';
+console.log("test1", EMAILJS_SERVICE_ID)
+console.log("test2", EMAILJS_TEMPLATE_ID)
+console.log("test3", EMAILJS_PUBLIC_KEY)
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({
@@ -9,7 +14,6 @@ const Contact: React.FC = () => {
     subject: "",
     message: ""
   });
-  console.log("body(Email):", form)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,23 +23,26 @@ const Contact: React.FC = () => {
     e.preventDefault();
     emailjs
       .send(
-        "service_odx33il",
-        "template_w3vodjj",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           name: form.name,
           email: form.email,
           subject: form.subject,
           message: form.message
         },
-        "BS2Ryf1yZxQNEy3mb"
+        EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
-          alert("Message sent successfully!");
+          Swal.fire({
+            title: "Your email will receive a reply as soon as possible. Thank you.",
+            icon: "success",
+            draggable: true
+          });
           setForm({ name: "", email: "", subject: "", message: "" });
         },
         (error) => {
-          alert("Failed to send message.");
           console.log(error);
         }
       );

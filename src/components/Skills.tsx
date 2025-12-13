@@ -1,6 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 import { Code, Database, Server, Layers, Globe, Zap, Award, BookOpen } from 'lucide-react';
 import type { SkillCategory } from '../types';
+type Certification = {
+  title: string;
+  image: string;
+};
 
 const skillCategories: SkillCategory[] = [
   {
@@ -10,15 +16,17 @@ const skillCategories: SkillCategory[] = [
       { name: "React + vite / Next.js", level: 95 },
       { name: "JavaScript", level: 90 },
       { name: "TypeScript", level: 90 },
-      { name: "Tailwind CSS", level: 95 }
+      { name: "Tailwind CSS", level: 80 },
+      { name: "JQuery", level: 90 }
     ]
   },
   {
     title: "Backend Development",
     icon: Server,
     skills: [
-      { name: "Node.js / Express", level: 95 },
-      { name: "REST APIs", level: 90 },
+      { name: "Node.js / Express", level: 80 },
+      { name: "REST APIs", level: 80 },
+      { name: "PHP PDO", level: 100 },
     ]
   },
   {
@@ -31,17 +39,6 @@ const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    title: "Cloud & DevOps",
-    icon: Globe,
-    skills: [
-      // { name: "AWS / Azure", level: 88 },
-      { name: "Docker", level: 60 },
-      //{ name: "CI/CD Pipelines", level: 90 },
-     // { name: "Terraform", level: 82 }
-    ]
-  },
-
-  {
     title: "Kintone Development",
     icon: Layers,
     skills: [
@@ -51,7 +48,7 @@ const skillCategories: SkillCategory[] = [
     ]
   },
 
-   {
+  {
     title: "Unit testing & E2E Testing",
     icon: Layers,
     skills: [
@@ -60,23 +57,23 @@ const skillCategories: SkillCategory[] = [
       { name: "E2E Testing(Cypress, jest)", level: 70 },
     ]
   },
-  
+
   {
     title: "Other Technologies",
     icon: Zap,
     skills: [
       { name: "WebSockets / Real-time", level: 88 },
-      { name: "Machine Learning Basics", level: 20 },
-      { name: "Blockchain", level: 78 },
+      // { name: "Machine Learning Basics", level: 20 },
+      // { name: "Blockchain", level: 78 },
     ]
   }
 ];
 
-const certifications = [
-  "AWS Certified Solutions Architect",
-  "Google Cloud Professional",
-  "Kubernetes Administrator (CKA)",
-  "MongoDB Certified Developer"
+const certifications: Certification[] = [
+  {
+    title: "ReactJS Frontend Development",
+    image: "../../public/resume/React.jpg",
+  },
 ];
 
 const Skills: React.FC = () => {
@@ -130,14 +127,43 @@ const Skills: React.FC = () => {
             <Award className="text-purple-400 mr-3" size={32} />
             <h3 className="text-2xl font-bold">Certifications & Achievements</h3>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          {/* <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (
               <div key={index} className="flex items-center p-4 bg-purple-600/10 rounded-lg border border-purple-400/30">
                 <BookOpen className="text-purple-400 mr-3" size={20} />
-                <span className="text-gray-300">{cert}</span>
+                <span className="text-gray-300 cursor-pointer" onClick={() => setSelectedCert(cert)}>{cert.title}</span>
+              </div>
+            ))}
+          </div> */}
+          <div className="grid md:grid-cols-2 gap-4">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="flex items-center p-4 bg-purple-600/10 rounded-lg border border-purple-400/30"
+              >
+                <BookOpen className="text-purple-400 mr-3" size={20} />
+                <span
+                  className="text-gray-300 cursor-pointer hover:text-purple-400 transition-colors"
+                  onClick={() =>
+                    Swal.fire({
+                      title: cert.title,
+                      imageUrl: cert.image,
+                      imageAlt: cert.title,
+                      width: "65%",
+                      background: "#0f172a",
+                      color: "#fff",
+                      showCloseButton: true,
+                      showConfirmButton: false,
+                      backdrop: true,
+                    })
+                  }
+                >
+                  {cert.title}
+                </span>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

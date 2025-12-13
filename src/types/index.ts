@@ -15,7 +15,7 @@ export interface Project {
   title: string;
   description: string;
   tech: string[];
-  image: string;
+  // image: string;
 }
 
 export interface Experience {

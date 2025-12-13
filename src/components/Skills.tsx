@@ -2,6 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import { Code, Database, Server, Layers, Zap, Award, BookOpen } from 'lucide-react';
 import type { SkillCategory } from '../types';
+import ReactImg from '../assets/React.jpg';
 type Certification = {
   title: string;
   image: string;
@@ -71,7 +72,7 @@ const skillCategories: SkillCategory[] = [
 const certifications: Certification[] = [
   {
     title: "ReactJS Frontend Development",
-    image: import.meta.env.BASE_URL + "image/React.jpg",
+    image: ReactImg,
   },
 ];
 

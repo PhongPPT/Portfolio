@@ -2,6 +2,8 @@ import React from 'react';
 import { Github, Mail, Facebook } from 'lucide-react';
 import type { HeroProps } from '../types';
 import Swal from 'sweetalert2';
+import FacebookImg from '../assets/Facebook.png';
+import CVPDF from '../assets/My_resume_911.pdf';
 
 // Define Facebook type 
 type Facebook = {
@@ -13,7 +15,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   // handle CV download
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = import.meta.env.BASE_URL + "image/My_resume_911.pdf";
+    link.href = CVPDF;
     link.download = "Phongsavath-Tipanya-CV.pdf";
     link.click();
   };
@@ -73,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
         onClick={() =>
           Swal.fire({
             title: "Facebook",
-            imageUrl: import.meta.env.BASE_URL + "image/Facebook.png",
+            imageUrl: FacebookImg,
             width: "65%",
             background: "#d6dbe8ff",
             color: "#fff",

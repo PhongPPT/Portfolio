@@ -71,7 +71,7 @@ const skillCategories: SkillCategory[] = [
 const certifications: Certification[] = [
   {
     title: "ReactJS Frontend Development",
-    image: "../../public/resume/React.jpg",
+    image: import.meta.env.BASE_URL + "image/React.jpg",
   },
 ];
 

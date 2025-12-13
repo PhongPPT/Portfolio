@@ -13,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   // handle CV download
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "../../public/resume/My resume 911.pdf";
+    link.href = import.meta.env.BASE_URL + "image/My_resume_911.pdf";
     link.download = "Phongsavath-Tipanya-CV.pdf";
     link.click();
   };
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
         onClick={() =>
           Swal.fire({
             title: "Facebook",
-            imageUrl: "/resume/Facebook.png",
+            imageUrl: import.meta.env.BASE_URL + "image/Facebook.png",
             width: "65%",
             background: "#d6dbe8ff",
             color: "#fff",

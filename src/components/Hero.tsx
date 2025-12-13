@@ -1,9 +1,9 @@
-import React from 'react';
-import { Github, Mail, Facebook } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Github, Mail, Facebook } from 'lucide-react';
 import type { HeroProps } from '../types';
 import Swal from 'sweetalert2';
 import FacebookImg from '../assets/Facebook.png';
-import CVPDF from '../assets/My_resume_911.pdf';
+import MyresumeImg from '../assets/My_resume.jpg';
 
 // Define Facebook type 
 type Facebook = {
@@ -12,13 +12,6 @@ type Facebook = {
 }
 
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
-  // handle CV download
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = CVPDF;
-    link.download = "Phongsavath-Tipanya-CV.pdf";
-    link.click();
-  };
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center max-w-4xl mx-auto">
@@ -55,39 +48,46 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           >
             Contact Me
           </button>
-
           <button
-            onClick={handleDownloadCV}
+            onClick={() =>
+              Swal.fire({
+                title: "My Resume",
+                imageUrl: MyresumeImg,
+                width: "70%",
+                background: "#98999cff",
+                color: "#fff",
+                showCloseButton: true,
+                showConfirmButton: false,
+                backdrop: true,
+              })
+            }
             className="px-8 py-3 border-2 border-gray-400 rounded-full font-semibold hover:bg-gray-400/10 transition-all"
           >
-            Download CV
+            Preview Resume
           </button>
         </div>
 
         <div className="flex justify-center space-x-6 mt-12">
           <a href="https://github.com/PhongPPT/Project_Actions_Server-1-" target='_blank' className="hover:text-purple-400 transition-colors" aria-label="GitHub"><Github size={24} /></a>
-          {/* <a href="#" className="hover:text-purple-400 transition-colors" aria-label="LinkedIn"><Linkedin size={24} /></a> */}
-         {/* {Array.isArray(selectedFacebook) && */}
-      <a
-        // key={index}
-        href="#"
-        className="hover:text-purple-400 transition-colors"
-        onClick={() =>
-          Swal.fire({
-            title: "Facebook",
-            imageUrl: FacebookImg,
-            width: "65%",
-            background: "#d6dbe8ff",
-            color: "#fff",
-            showCloseButton: true,
-            showConfirmButton: false,
-            backdrop: true,
-          })
-        }
-        aria-label="Facebook"
-      >
-        <Facebook size={24} />
-      </a>
+          <a
+            href="#"
+            className="hover:text-purple-400 transition-colors"
+            onClick={() =>
+              Swal.fire({
+                title: "Facebook",
+                imageUrl: FacebookImg,
+                width: "65%",
+                background: "#d6dbe8ff",
+                color: "#fff",
+                showCloseButton: true,
+                showConfirmButton: false,
+                backdrop: true,
+              })
+            }
+            aria-label="Facebook"
+          >
+            <Facebook size={24} />
+          </a>
           <a href="contact" onClick={(e) => {
             e.preventDefault();
             document

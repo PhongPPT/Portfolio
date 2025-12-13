@@ -3,9 +3,6 @@ import emailjs from 'emailjs-com';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../config/emailConfig';
-console.log("test1", EMAILJS_SERVICE_ID)
-console.log("test2", EMAILJS_TEMPLATE_ID)
-console.log("test3", EMAILJS_PUBLIC_KEY)
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({

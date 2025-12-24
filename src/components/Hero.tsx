@@ -1,4 +1,5 @@
 import {Github, Mail, Facebook } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { HeroProps } from '../types';
 import Swal from 'sweetalert2';
 import FacebookImg from '../assets/Facebook.png';
@@ -11,6 +12,7 @@ type Facebook = {
 }
 
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
+  const { t } = useTranslation();
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center max-w-4xl mx-auto">
@@ -24,11 +26,10 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
-          I'm Phongsavath TIPANYA
+          {t('hero.greeting')}
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-4">
-          Full Stack Developer
-          {/* Senior Full Stack Developer */}
+          {t('hero.title')}
         </p>
         {/* <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
           Building scalable, high-performance applications with modern technologies. Specialized in cloud architecture, microservices, and delivering exceptional user experiences.
@@ -39,18 +40,18 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             onClick={() => scrollToSection('projects')}
             className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:scale-105 transform transition-all shadow-lg hover:shadow-purple-500/50"
           >
-            View My Work
+            {t('hero.viewWork')}
           </button>
           <button
             onClick={() => scrollToSection('contact')}
             className="px-8 py-3 border-2 border-purple-400 rounded-full font-semibold hover:bg-purple-400/10 transition-all"
           >
-            Contact Me
+            {t('hero.contactMe')}
           </button>
           <button
             onClick={() =>
               Swal.fire({
-                title: "My Resume",
+                title: t('hero.myResume'),
                 imageUrl: MyresumeImg,
                 width: "100%",
                 background: "#98999cff",
@@ -62,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             }
             className="px-8 py-3 border-2 border-gray-400 rounded-full font-semibold hover:bg-gray-400/10 transition-all"
           >
-            Preview Resume
+            {t('hero.previewResume')}
           </button>
         </div>
 

@@ -1,38 +1,15 @@
 import React from 'react';
 import type { Experience as ExperienceType } from '../types';
-
-const experiencesData: ExperienceType[] = [
-  // {
-  //   title: "Senior Full Stack Developer",
-  //   company: "Tech Innovations Inc.",
-  //   period: "2022 - Present",
-  //   description: "Leading development of cloud-native applications and mentoring junior developers. Implemented microservices architecture that improved system scalability by 300%."
-  // },
-  {
-    title: "Full Stack Developer",
-    company: "Systory Co., Ltd.",
-    period: "2023 - 2025",
-    description: `- Design custom documents, such as flowcharts, sequence diagrams, etc. Most of the work is done in Japan, and the application is customizable. Plugins work in the Kintone app.\n
-                  - Write code, review code, and create documents related to unit and integration testing.\n
-                  - Connect with ChatGPT to help analyze problems and provide solutions.\n
-                  - Connect with Google Translate for translation from English to Japanese.\n
-                  - Sendgride for emails, with customizable content.\n
-                  - Collaborate on various projects with Systory partner companies.`
-  },
-  // {
-  //   title: "Software Engineer",
-  //   company: "StartUp Ventures",
-  //   period: "2018 - 2020",
-  //   description: "Built MVP products for various startups. Collaborated with cross-functional teams to deliver products on time and within budget."
-  // }
-];
+import { useTranslation } from 'react-i18next';
 
 const Experience: React.FC = () => {
+  const { t } = useTranslation();
+  const experiencesData: ExperienceType[] = t('experience.items', { returnObjects: true }) as ExperienceType[];
   return (
     <section id="experience" className="min-h-screen px-4 py-20">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Experience
+          {t('experience.title')}     
         </h2>
         <div className="space-y-8">
           {experiencesData.map((exp, index) => (

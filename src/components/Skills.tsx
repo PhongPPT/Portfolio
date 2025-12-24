@@ -1,5 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 import { Code, Database, Server, Layers, Zap, Award, BookOpen } from 'lucide-react';
 import type { SkillCategory } from '../types';
 import ReactImg from '../assets/React.jpg';
@@ -69,14 +70,22 @@ const skillCategories: SkillCategory[] = [
   }
 ];
 
-const certifications: Certification[] = [
-  {
-    title: "ReactJS Frontend Development",
-    image: ReactImg,
-  },
-];
+// const certifications: Certification[] = [
+//   {
+//     title: t("awards.title"),
+//     image: ReactImg,
+//   },
+// ];
 
 const Skills: React.FC = () => {
+  const { t } = useTranslation();
+  const certifications: Certification[] = [
+    {
+      title: t("awards.description"),
+      image: ReactImg,
+    },
+  ];
+
   return (
     <section id="skills" className="min-h-screen px-4 py-20">
       <div className="max-w-7xl mx-auto">
@@ -125,7 +134,7 @@ const Skills: React.FC = () => {
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
           <div className="flex items-center mb-6">
             <Award className="text-purple-400 mr-3" size={32} />
-            <h3 className="text-2xl font-bold">Certifications & Achievements</h3>
+            <h3 className="text-2xl font-bold">{t('awards.title')}</h3>
           </div>
           {/* <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (

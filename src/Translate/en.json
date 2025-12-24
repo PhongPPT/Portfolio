@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "welcome": "Welcome",
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Mr Phongsavath TIPANYA",
+    "title": "Full Stack Developer",
+    "description": "Building scalable, high-performance applications with modern technologies. Specialized in cloud architecture, microservices, and delivering exceptional user experiences.",
+    "viewWork": "View My Work",
+    "contactMe": "Contact Me",
+    "previewResume": "Preview Resume",
+    "myResume": "My Resume"
+  },
+  "about": {
+    "title": "About Me",
+    "journeyTitle": "My Journey",
+    "journeyDesc1": "Developers with strong motivation to grow in the tech industry.",
+    "journeyDesc2": "I am 25 years old and based in Dondou Village, Hadsayfong District, Nakhonluang Province. I graduated with a Bachelor's degree in Computer Science from the National University of Laos in 2021.",
+    "whatIDoTitle": "What I Do",
+    "whatIDoDesc1": "I specialize in full-stack development, cloud architecture, and DevOps practices. I'm experienced in building microservices, implementing CI/CD pipelines, and optimizing application performance.",
+    "whatIDoDesc2": "Passionate about software development, continuous learning, and creating efficient solutions."
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "title": "Full Stack Developer",
+        "company": "Systory Co., Ltd.",
+        "period": "2023 - 2025",
+        "description": "- Design custom documents, such as flowcharts, sequence diagrams, etc. Most of the work is done in Japan, and the application is customizable. Plugins work in the Kintone app.\n- Write code, review code, and create documents related to unit and integration testing.\n- Connect with ChatGPT to help analyze problems and provide solutions.\n- Connect with Google Translate for translation from English to Japanese.\n- Sendgrid for emails, with customizable content.\n- Collaborate on various projects with Systory partner companies."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A showcase of innovative solutions delivering real-world impact across various industries",
+    "viewDetails": "View Details",
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo",
+    "overview": "Overview",
+    "challenges": "Challenges",
+    "solutions": "Solutions",
+    "results": "Results & Impact"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Comprehensive technical proficiency across the full development lifecycle",
+    "certifications": "Certifications & Achievements",
+    "certificationsDesc": "Professional certifications and industry recognition demonstrating expertise and commitment to continuous learning",
+    "verifyCredential": "Verify Credential",
+    "categories": {
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "database": "Database & Storage",
+      "cloud": "Cloud & DevOps",
+      "architecture": "Architecture & Design",
+      "other": "Other Technologies"
+    }
+  },
+  "awards": {
+    "title": "Certifications & Achievements",
+    "description": "ReactJS Frontend Development Course"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's build something amazing together!",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Your Message",
+    "sendMessage": "Send Message",
+    "messagePopup": {
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred while sending your message. Please try again later."
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

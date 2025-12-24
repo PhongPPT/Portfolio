@@ -4,9 +4,9 @@ import type { Project } from '../types';
 
 const projectsData: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "Plugin kintone",
     description: "Full-stack e-commerce solution with payment integration, real-time inventory, and analytics dashboard. Handles 100K+ daily transactions.",
-    tech: ["React", "Node.js", "MongoDB", "Redis", "AWS"],
+    tech: ["JavaScript", "CSS", "HTML", "kintone UI"],
     // image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
   },
   {

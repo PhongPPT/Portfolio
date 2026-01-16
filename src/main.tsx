@@ -5,21 +5,21 @@ import App from './App.tsx'
 import './i18n.ts'
 
 // Disable right-click and keyboard shortcuts globally
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
+// document.addEventListener("contextmenu", (e) => {
+//   e.preventDefault();
+// });
 
-document.addEventListener("keydown", (e) => {
-  // Windows: Ctrl+C / Ctrl+X / Ctrl+V
-  if (e.ctrlKey && ["c", "x", "v"].includes(e.key.toLowerCase())) {
-    e.preventDefault();
-  }
+// document.addEventListener("keydown", (e) => {
+//   // Windows: Ctrl+C / Ctrl+X / Ctrl+V
+//   if (e.ctrlKey && ["c", "x", "v"].includes(e.key.toLowerCase())) {
+//     e.preventDefault();
+//   }
 
-  // Mac: Command (Meta) + C / X / V
-  if (e.metaKey && ["c", "x", "v"].includes(e.key.toLowerCase())) {
-    e.preventDefault();
-  }
-});
+//   // Mac: Command (Meta) + C / X / V
+//   if (e.metaKey && ["c", "x", "v"].includes(e.key.toLowerCase())) {
+//     e.preventDefault();
+//   }
+// });
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
